@@ -1,0 +1,41 @@
+<template>
+  <div id="div_header_vowrnw">
+    <span style="font-size: 30px">管理后台</span>
+    <span id="span_werovmjwertw">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIzMjM1MzU0Mjk3IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjI1MDQiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48L3N0eWxlPjwvZGVmcz48cGF0aCBkPSJNNjE0LjAxNSA1NjIuMjI2SDQwOS45MjhjLTE5MS4wMjEgMC0zNDYuNDg3IDE1My4wNDYtMzQ2LjQ4NyAzNDEuMjl2MjAuMDdDNjMuNDQxIDEwMjQgMjE2LjM2IDEwMjQgNDA5LjkyOCAxMDI0aDIwNC4wODdjMTg1LjkyNyAwIDM0Ni40NiAwIDM0Ni41LTEwMC40MTN2LTIwLjEyMWMwLTE4OC4xNTYtMTU1LjQ4LTM0MS4yOTEtMzQ2LjUtMzQxLjI5MXpNNTAxLjc3IDBDMzUwLjA3NSAwIDIyNi43IDEyMS41NjYgMjI2LjcgMjcxLjAyczEyMy4zMjMgMjcxLjA0NyAyNzUuMDcgMjcxLjA0N1M3NzYuODQgNDIwLjQ3NSA3NzYuODQgMjcxLjAyIDY1My40NTQgMCA1MDEuNzcxIDB6IiBwLWlkPSIyNTA1Ij48L3BhdGg+PC9zdmc+"
+           alt="" @click="menuClick(0)">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIzMjM1Mzg3MjMxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjMzNDgiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48L3N0eWxlPjwvZGVmcz48cGF0aCBkPSJNMzE1LjI3NDU4MyA0MjYuODEzOTFhMjQxIDI0MSAwIDEgMCAzNDAuODE5NTItMzQwLjgzMTQxNyAyNDEgMjQxIDAgMSAwLTM0MC44MTk1MiAzNDAuODMxNDE3WiIgZmlsbD0iIzQ0NDQ0NCIgcC1pZD0iMzM0OSI+PC9wYXRoPjxwYXRoIGQ9Ik03ODcuNyA2MjIuN2MtMTA2LjUgMC0xOTMuMiA4Ni43LTE5My4yIDE5My4yIDAgMTA2LjUgODYuNyAxOTMuMiAxOTMuMiAxOTMuMiAxMDYuNSAwIDE5My4yLTg2LjcgMTkzLjItMTkzLjItMC4xLTEwNi42LTg2LjctMTkzLjItMTkzLjItMTkzLjJ6TTg1MCA4NDUuM2gtMzJ2MzJjMCAxOC4xLTExLjUgMzMtMjkuNyAzMy0xOC4xIDAtMjkuNy0xNC44LTI5LjctMzN2LTMyaC0zMmMtMTguMSAwLTMzLTExLjUtMzMtMjkuN3MxNC44LTI5LjcgMzMtMjkuN2gzMnYtMzJjMC0xOC4xIDExLjUtMzMgMjkuNy0zMyAxOC4xIDAgMjkuNyAxNC44IDI5LjcgMzN2MzJoMzJjMTguMSAwIDMzIDExLjUgMzMgMjkuN3MtMTQuOCAyOS43LTMzIDI5Ljd6IiBmaWxsPSIjNDQ0NDQ0IiBwLWlkPSIzMzUwIj48L3BhdGg+PHBhdGggZD0iTTYxNS42IDk5NS40Yy0xNi40LTE1LjctMzAuNi0zMy42LTQyLjItNTMuMmgwLjFjLTIxLjktMzctMzQuNC04MC4xLTM0LjQtMTI2LjIgMC0xMTQgNzcuMS0yMTAuNCAxODEuOS0yMzkuNyA3LTIuMiAxNC44LTQuMSAyNC40LTUuNy01Mi42LTI4LjItMTEyLjEtNDMuMi0xNzQuMS00My4ySDQwMGMtOTYuMSAwLTE4Ni4yIDM2LTI1My44IDEwMS4zLTY4LjQgNjYuMS0xMDYgMTU1LTEwNiAyNTAuNSAwIDY1LjcgNTMuNSAxMTkuMiAxMTkuMiAxMTkuMmg0NTkuM2MtMC43LTAuNi0xLjQtMS4zLTItMi0wLjQtMC4yLTAuNy0wLjYtMS4xLTF6IiBmaWxsPSIjNDQ0NDQ0IiBwLWlkPSIzMzUxIj48L3BhdGg+PC9zdmc+"
+           alt="" @click="menuClick(1)">
+    </span>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "App_Header",
+  data(){
+    return {
+      childRouter: ["/login", "/register"],
+      childContent: ["仪表盘", "文章管理"]
+    }
+  },
+  methods: {
+    menuClick: function (i){
+      i = parseInt(i);
+      this.$router.replace({
+        path: this.childRouter[i]
+      })
+    },
+  },
+
+}
+</script>
+
+<style scoped>
+#span_werovmjwertw{
+  margin-left: 600px;
+}
+#span_werovmjwertw>img{
+  height: 20px;
+}
+</style>

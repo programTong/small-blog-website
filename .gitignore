@@ -1,1 +1,4 @@
-front-end/node_modules
+user-front-end/node_modules
+admin-front-end/node_modules
+user-front-end/dist
+admin-front-end/dist

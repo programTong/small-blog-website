@@ -1,0 +1,43 @@
+package com.tongtongbigboy.blog.dto.cond;
+
+/**
+ * meta查询条件
+ *
+ */
+public class MetaCond {
+
+    /**
+     * meta Name
+     */
+    private String name;
+    /**
+     * 类型
+     */
+    private String type;
+
+    private Integer uid;
+
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+}
