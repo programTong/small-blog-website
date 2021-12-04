@@ -131,11 +131,13 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public PageInfo<ContentDomain> getArticlesByCond(ContentCond contentCond, Integer pageNum, Integer pageSize) {
+        System.out.println("进入方法");
         if (null == contentCond)
             throw new RuntimeException(ErrorConstant.Common.PARAM_IS_EMPTY);
         PageHelper.startPage(pageNum, pageSize);
         List<ContentDomain> contents = contentDao.getArticlesByCond(contentCond);
         PageInfo<ContentDomain> pageInfo = new PageInfo<>(contents);
+        System.out.println("方法jiehsu");
         return pageInfo;
     }
 

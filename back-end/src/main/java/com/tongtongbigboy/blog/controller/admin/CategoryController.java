@@ -5,6 +5,7 @@ import com.tongtongbigboy.blog.constant.WebConst;
 import com.tongtongbigboy.blog.dto.MetaDto;
 import com.tongtongbigboy.blog.dto.Result;
 import com.tongtongbigboy.blog.service.meta.MetaService;
+import io.jsonwebtoken.Claims;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +32,10 @@ public class CategoryController  {
 
     @GetMapping(value = "")
     public Result index(HttpServletRequest request){
-//        Claims user_claims = (Claims)request.getAttribute("user_claims");
-//        if (user_claims==null){
-//            return new Result(false, 4000,"未登录");
-//        }
+        Claims user_claims = (Claims)request.getAttribute("admin_claims");
+        if (user_claims==null){
+            return new Result(false, 4000,"未登录");
+        }
 
         List<MetaDto> categories = metaService.getMetaList(null,Types.CATEGORY.getType(), null, WebConst.MAX_POSTS);
         List<MetaDto> tags = metaService.getMetaList(null,Types.TAG.getType(), null, WebConst.MAX_POSTS);
@@ -56,10 +57,10 @@ public class CategoryController  {
             HttpServletRequest request,
             @RequestBody Map<String,Object> map
     ){
-//        Claims user_claims = (Claims)request.getAttribute("user_claims");
-//        if (user_claims==null){
-//            return new Result(false, 4000,"未登录");
-//        }
+        Claims user_claims = (Claims)request.getAttribute("admin_claims");
+        if (user_claims==null){
+            return new Result(false, 4000,"未登录");
+        }
 
         Integer mid = (Integer)map.get("mid");
         Integer uid = (Integer)map.get("uid");

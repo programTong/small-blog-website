@@ -7,6 +7,7 @@ import com.tongtongbigboy.blog.model.ContentDomain;
 import com.tongtongbigboy.blog.service.content.ContentService;
 import com.tongtongbigboy.blog.service.log.LogService;
 import com.tongtongbigboy.blog.service.meta.MetaService;
+import io.jsonwebtoken.Claims;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,10 +54,10 @@ public class ArticleController  {
             @RequestParam(name = "page_size", required = false, defaultValue = "15")
             Integer page_size
     ){
-//        Claims user_claims = (Claims)request.getAttribute("user_claims");
-//        if (user_claims==null){
-//            return new Result(false, 4000,"未登录");
-//        }
+        Claims user_claims = (Claims)request.getAttribute("admin_claims");
+        if (user_claims==null){
+            return new Result(false, 4000,"未登录");
+        }
         ContentCond contentCond = new ContentCond();
         PageInfo<ContentDomain> articles = contentService.getArticlesByCond(contentCond, page, page_size);
         return new Result(true, 2000, "管理员文章首页成功",articles);
@@ -69,10 +70,10 @@ public class ArticleController  {
             HttpServletRequest request,
             @RequestBody Map<String,Object> map
     ){
-//        Claims user_claims = (Claims)request.getAttribute("user_claims");
-//        if (user_claims==null){
-//            return new Result(false, 4000,"未登录");
-//        }
+        Claims user_claims = (Claims)request.getAttribute("admin_claims");
+        if (user_claims==null){
+            return new Result(false, 4000,"未登录");
+        }
 
         Integer cid = (Integer)map.get("cid");
             contentService.deleteArticleById(cid);

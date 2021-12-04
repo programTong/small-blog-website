@@ -15,7 +15,6 @@ export default {
   data(){
     return {
       childRouter: ["/login", "/register"],
-      childContent: ["仪表盘", "文章管理"]
     }
   },
   methods: {

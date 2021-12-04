@@ -6,6 +6,7 @@ import com.tongtongbigboy.blog.model.UserDomain;
 import com.tongtongbigboy.blog.service.log.LogService;
 import com.tongtongbigboy.blog.service.site.SiteService;
 import com.tongtongbigboy.blog.service.user.UserService;
+import io.jsonwebtoken.Claims;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +42,10 @@ public class IndexController  {
 
     @GetMapping(value = {"","/index"})
     public Result index(HttpServletRequest request){
-//        Claims user_claims = (Claims)request.getAttribute("user_claims");
-//        if (user_claims==null){
-//            return new Result(false, 4000,"未登录");
-//        }
+        Claims user_claims = (Claims)request.getAttribute("admin_claims");
+        if (user_claims==null){
+            return new Result(false, 4000,"未登录");
+        }
 
         LOGGER.info("Enter user index method");
         UserDomain user = new UserDomain();

@@ -6,6 +6,7 @@ import com.tongtongbigboy.blog.dto.Result;
 import com.tongtongbigboy.blog.dto.cond.CommentCond;
 import com.tongtongbigboy.blog.model.CommentDomain;
 import com.tongtongbigboy.blog.service.comment.CommentService;
+import io.jsonwebtoken.Claims;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +42,10 @@ public class CommentController {
             Integer page_size,
             HttpServletRequest request
     ){
-
+        Claims user_claims = (Claims)request.getAttribute("admin_claims");
+        if (user_claims==null){
+            return new Result(false, 4000,"未登录");
+        }
         PageInfo<CommentDomain> comments = commentService.getCommentsByCond(new CommentCond(), page, page_size);
 
         return new Result(true, 2000, "进入评论列表页",comments);
@@ -50,8 +54,14 @@ public class CommentController {
 
     @PostMapping(value = "/delete")
     public Result deleteComment(
-            @RequestBody Map<String,Object> map
+            @RequestBody Map<String,Object> map,
+            HttpServletRequest request
     ){
+        Claims user_claims = (Claims)request.getAttribute("admin_claims");
+        if (user_claims==null){
+            return new Result(false, 4000,"未登录");
+        }
+
         Integer coid = (Integer)map.get("coid");
         try {
             CommentDomain comment = commentService.getCommentById(coid);

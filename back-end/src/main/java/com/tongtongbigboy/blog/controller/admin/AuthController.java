@@ -78,7 +78,7 @@ public class AuthController {
                 String token = jwtUtil.createJWT(String.valueOf(admin0.getAid()), admin0.getUsername(), "admin",admin0.getAid());
                 Map<String,Object> data = new HashMap<>();
                 data.put("token",token);
-                data.put("role","admin");
+                data.put("role","user");
                 data.put("aid",admin0.getAid());
                 data.put("username",admin0.getUsername());
                 admin0.setPassword("null");
